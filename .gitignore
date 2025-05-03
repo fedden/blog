@@ -1,0 +1,15 @@
+.venv
+.python-version
+docs/literal/
+docs/4-literal/*.md
+site/*
+.DS_Store
+.python-version
+firebase-debug.log
+.firebase/
+docs/4-literal/.pages
+.aider*
+.obsidian/
+__pycache__/
+.cache/
+tags

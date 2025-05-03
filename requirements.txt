@@ -1,0 +1,5 @@
+mkdocs-material[imaging]
+lazydocs
+mkdocs-awesome-pages-plugin
+pyyaml
+ipdb

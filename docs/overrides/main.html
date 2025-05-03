@@ -1,46 +1,28 @@
-
 {% extends "base.html" %}
 
 <!-- Custom front matter -->
 {% block extrahead %}
-
   <!-- Extra style sheets (can't be set in mkdocs.yml due to content hash) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/pixel_icon_32x32.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 {% endblock %}
 
-<!-- Add page type class to body -->
-{% block html_body %}
-  {% set page_type = "page-type-default" %} {# Default class #}  
-  {% if page.url == "blog/" %}
-    {% set page_type = "page-type-blog-index" %} {# Blog index page #}
-  {% elif page.url and page.url.startswith("blog/posts/") %}
-    {% set page_type = "page-type-blog-post" %} {# Blog post page #}
-  {% elif page.url == "" %}
-    {% set page_type = "page-type-home" %} {# Homepage #} 
-  {% endif %}
-  {# Render the original body tag with the added class #}
-  <body>
-    <div class="{{ page_type }}">
-      {{ super() }} {# Renders the original content of html_body from base.html #}
-    </div>
-  </body>
-{% endblock %}
-
 
 <!-- Announcement bar -->
 {% block announce %}
-  For updates follow <strong>@fedden</strong> on
-  <a href="https://x.com/leonfedden">
-    <span class="twemoji twitter">
-      {% include ".icons/fontawesome/brands/twitter.svg" %}
+  I'm available on <a href="https://bsky.app/profile/leonfedden.bsky.social">
+    <span class="twemoji bluesky">
+      {% include ".icons/fontawesome/brands/bluesky.svg" %}
     </span>
-    <strong>Twitter</strong>
-  </a>
+    <strong>Bluesky</strong>
+  </a> and <a href="https://www.linkedin.com/in/leon-fedden/">
+    <span class="twemoji linkedin">
+      {% include ".icons/fontawesome/brands/linkedin.svg" %}
+    </span>
+    <strong>LinkedIn</strong>
+  </a> for professional inquiries.
 {% endblock %}
-

@@ -101,49 +101,27 @@
 }
 
 :root {
-  --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
-  --link-visited: hsl(196 80% 77%);
-  --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 25%);
-  --kbd-bg-color: hsl(0, 0%, 16%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: white;
   --border-width-thin: 1.36px;
   --border-width-thick: 2.27px;
-  --sidenote-target-border-color: hsl(55, 55%, 70%);
-  --footnotes-border-color: hsl(0, 0%, 39%);
   --text-indent-size: 1.463rem; 
 }
 
-.latex-dark {
-  --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
-  --link-visited: hsl(196 80% 77%);
-  --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 25%);
-  --kbd-bg-color: hsl(0, 0%, 16%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: white;
-  --sidenote-target-border-color: hsl(0, 0%, 59%);
-  --footnotes-border-color: hsl(0, 0%, 59%);
-  --proof-symbol-filter: invert(80%);
+/* Update md-logo to have a bigger width of 200px */
+.md-logo {
+  width: 200px;
+  height: 200px;
+}
+/* Also update .md-header__button.md-logo img, .md-header__button.md-logo svg the same. */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  width: 200px;
+  height: 200px;
 }
 
-@media (prefers-color-scheme: dark) {
-   .latex-dark-auto {
-    --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 16%);
-    --link-visited: hsl(196 80% 77%);
-    --link-focus-outline: hsl(215, 63%, 73%);
-    --pre-bg-color: hsl(0, 1%, 25%);
-    --kbd-bg-color: hsl(0, 0%, 16%);
-    --kbd-border-color: hsl(210, 5%, 70%);
-    --table-border-color: white;
-    --sidenote-target-border-color: hsl(0, 0%, 59%);
-    --footnotes-border-color: hsl(0, 0%, 59%);
-    --proof-symbol-filter: invert(80%);
-  }
+.md-header__inner {
+    align-items: start;
+    display: flex;
+    padding: 0.5rem 0.0rem;
 }
 
 /* Remove default margin */
@@ -189,8 +167,6 @@ body {
 
   counter-reset: theorem definition sidenote-counter;
 
-  /* color: var(--body-color); */
-  /* background-color: var(--body-bg-color); */
 
   text-rendering: optimizeLegibility;
 }
@@ -230,15 +206,8 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* Make links red */
-a,
-a:visited {
-  color: var(--link-visited);
-}
-
 a:focus {
   outline-offset: 2px;
-  outline: 2px solid var(--link-focus-outline);
 }
 
 /* Make images easier to work with */
@@ -280,15 +249,13 @@ pre {
   max-width: 100%;
   overflow: auto;
   border-radius: 4px;
-  background: var(--pre-bg-color);
 }
 pre code {
   font-size: 95%;
   position: relative;
 }
 kbd {
-  background: var(--kbd-bg-color);
-  border: 1px solid var(--kbd-border-color);
+  border: 1px solid;
   border-radius: 2px;
   padding: 2px 4px;
   font-size: 75%;
@@ -300,8 +267,8 @@ table:not(.borders-custom) {
   border-spacing: 0;
   width: auto;
   max-width: 100%;
-  border-top: var(--border-width-thick) solid var(--table-border-color);
-  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+  border-top: var(--border-width-thick) solid;
+  border-bottom: var(--border-width-thick) solid;
   /* display: block; */
   overflow-x: auto; /* does not work because element is not block */
   /* white-space: nowrap; */
@@ -309,19 +276,19 @@ table:not(.borders-custom) {
 }
 /* add bottom border on column table headings  */
 table:not(.borders-custom) tr > th[scope='col'] {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+  border-bottom: var(--border-width-thin) solid;
 }
 /* add right border on row table headings  */
 table:not(.borders-custom) tr > th[scope='row'] {
-  border-right: var(--border-width-thin) solid var(--table-border-color);
+  border-right: var(--border-width-thin) solid;
 }
 table:not(.borders-custom) > tbody > tr:first-child > td,
 table:not(.borders-custom) > tbody > tr:first-child > th {
-  border-top: var(--border-width-thin) solid var(--table-border-color);
+  border-top: var(--border-width-thin) solid;
 }
 table:not(.borders-custom) > tbody > tr:last-child > td,
 table:not(.borders-custom) > tbody > tr:last-child > th {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+  border-bottom: var(--border-width-thin) solid;
 }
 
 th,
@@ -367,29 +334,29 @@ table.borders-custom {
 }
 
 .border-top-thick {
-  border-top: var(--border-width-thick) solid var(--table-border-color);
+  border-top: var(--border-width-thick) solid;
 }
 .border-right-thick {
-  border-right: var(--border-width-thick) solid var(--table-border-color);
+  border-right: var(--border-width-thick) solid;
 }
 .border-bottom-thick {
-  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+  border-bottom: var(--border-width-thick) solid;
 }
 .border-left-thick {
-  border-left: var(--border-width-thick) solid var(--table-border-color);
+  border-left: var(--border-width-thick) solid;
 }
 
 .border-top-thin {
-  border-top: var(--border-width-thin) solid var(--table-border-color);
+  border-top: var(--border-width-thin) solid;
 }
 .border-right-thin {
-  border-right: var(--border-width-thin) solid var(--table-border-color);
+  border-right: var(--border-width-thin) solid;
 }
 .border-bottom-thin {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+  border-bottom: var(--border-width-thin) solid;
 }
 .border-left-thin {
-  border-left: var(--border-width-thin) solid var(--table-border-color);
+  border-left: var(--border-width-thin) solid;
 }
 
 /* Table column alignment */
@@ -568,7 +535,7 @@ article.md-post--excerpt {
 
 /* (WIP) add border when a sidenote is clicked on */
 .sidenote:target {
-  border: var(--sidenote-target-border-color) 1.5px solid;
+  border: 1.5px solid;
   padding: 0 .5rem;
   scroll-margin-block-start: 10rem;
 }
@@ -649,7 +616,7 @@ input.sidenote-toggle {
   margin-bottom: 0.4rem;
 }
 .footnotes {
-  border-top: 1px solid var(--footnotes-border-color);
+  border-top: 1px solid;
 }
 
 /* Center title and paragraph */
