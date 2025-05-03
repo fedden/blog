@@ -60,8 +60,6 @@ build:
 	pyenv local $(PYTHON_VERSION)
 	@# First build the docs:
 	.venv/bin/mkdocs build
-	@# Then generate the app.yaml file:
-	. .venv/bin/activate && $(PYTHON) scripts/generate_app_yaml.py 
 
 
 .PHONY: deploy
