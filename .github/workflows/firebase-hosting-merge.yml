@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install python with pyenv
+        uses: gabrielfalcao/pyenv-action@v18
+        with:
+          default: 3.10.13 
+          command: pip install -U pip  # upgrade pip after installing python
       - run: make build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
