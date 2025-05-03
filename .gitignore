@@ -1,7 +1,5 @@
 .venv
 .python-version
-docs/literal/
-docs/4-literal/*.md
 site/*
 .DS_Store
 .python-version
