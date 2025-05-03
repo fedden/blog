@@ -543,11 +543,25 @@ dl dd {
  *   This is such a hack - need to figure out how to balance side notes with article max width.
  */
 article {
-  max-width: 61ch;
+  max-width: 61ch; /* Default width for articles, e.g., full blog posts */
+  /* Center the narrow article */
+  margin-left: auto;
+  margin-right: auto;
+  /* Needed for relative positioning of sidenotes if using that method */
+  position: relative; 
+}
+
+/* Override width for blog post excerpts on the index page */
+article.md-post--excerpt {
+  max-width: none; /* Allow excerpt articles to take full width */
+  margin-left: 0;  /* Reset centering margins if needed */
+  margin-right: 0;
+  position: static; /* Reset position if not needed */
 }
 
 
 .sidenote {
+  /* Sidenote styles will primarily apply to non-excerpt articles due to the width */
   font-size: 0.8rem;
   float: right;
   clear: right;
