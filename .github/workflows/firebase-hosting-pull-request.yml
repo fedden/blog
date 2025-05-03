@@ -18,6 +18,7 @@ jobs:
         with:
           default: 3.10.13 
           command: pip install -U pip  # upgrade pip after installing python
+      - run: make init
       - run: make build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
