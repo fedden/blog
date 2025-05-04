@@ -11,3 +11,4 @@ docs/4-literal/.pages
 __pycache__/
 .cache/
 tags
+.vscode/
