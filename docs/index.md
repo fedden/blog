@@ -4,14 +4,14 @@ Hi there 👋, I'm Leon!
 
 Nice to meet you! I'm CTO at [Literal Labs](https://www.literal-labs.ai/). 
 
-Previously, I worked as the Deep Learning Platform Lead at AstraZeneca, where I was trying not to slow down the AI team responsible for finding biomarkers in medical data formats, generally for oncology. At AZ I got to learn about super interesting medical imaging modalities such as Multiplex immunofluorescence (mIF) images, CT and MRI. Also had the chance to work with a large group of world-class, bright and motivated individuals, lucky me!.
+Once upon a time (well, not that long ago), I was the Deep Learning Platform Lead at AstraZeneca. My main mission there was to avoid slowing down a brilliant AI team who were busy hunting for biomarkers in all sorts of medical data—mostly for oncology. I had the pleasure (and sometimes the challenge) of learning about fascinating medical imaging techniques like Multiplex immunofluorescence (mIF), CT, and MRI. It was a real privilege to work alongside a group of world-class, motivated, and genuinely lovely people—honestly, I count myself very lucky.
 
-I was responsible for building out SSL workflows, ML pipelines, whilst also navigating the complexities of a large organisation, and trying to ensure everyone was having fun, and value was being added. 
+My days were spent building self-supervised learning workflows and machine learning pipelines, all while navigating the labyrinthine world of a large organisation. I did my best to make sure everyone was having a good time and, crucially, that we were actually delivering value (and not just more meetings).
 
-Going back in time, from ~70,000 colleagues at AstraZeneca, to about 7 colleagues at HyperSurfaces, here I helped out with AI research and engineering, which was all about TinyML (Deep Neural Networks) before we had nice things like TensorFlow Lite[2]. Here, I had the chance to work with some fantastic people, including [Parag Mital](https://pkmital.com/home/) who I've stolen my `.vimrc` and `.tmux.conf` settings from, [Bruno Zamborlin](https://brunozamborlin.net/about/) and more!.
+If we rewind a bit further, I went from being one of ~70,000 at AstraZeneca to one of just 7 at HyperSurfaces. There, I dived into AI research and engineering, working on TinyML (deep neural networks on tiny devices) before TensorFlow Lite made it all look easy. I got to collaborate with some fantastic folks, including [Parag Mital](https://pkmital.com/home/) - from whom I shamelessly stole my `.vimrc` and `.tmux.conf` - and [Bruno Zamborlin](https://brunozamborlin.net/about/), among others.
 
-Before that, I was training unconditional generative Neural Networks at Goldsmiths College, University of London!
+Before all that, I was at Goldsmiths, University of London, training unconditional generative neural networks and generally having a great time exploring the frontiers of AI.
 
-I'm passionate about Artificial Intelligence news, research, engineering and in general software development. I'm from the United Kingdom, but I currently live in Spain, and am enjoying moving around the EU. 
+I’m passionate about all things Artificial Intelligence—news, research, engineering, and software development in general. I'm afraid I'm a Brit, but these days I call Spain home and enjoy wandering around the EU. If you fancy a chat about AI, tech, or just want to swap Vim tips, do say hello!
 
 You can reach me at leonfedden [at] gmail [dot] com.
