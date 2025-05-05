@@ -1,0 +1,38 @@
+/* Fade-in animation for page content */
+.md-content {
+  animation: fadeInX 0.2s ease-in-out;
+}
+
+.md-tabs__link {
+  animation: fadeInY 0.2s ease-in-out;
+}
+
+@keyframes fadeInX {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInY {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Smooth hover effects for links */
+.md-content a:not(.md-button) {
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 1px solid transparent;
+}
+
+.md-content a:not(.md-button):hover {
+  border-bottom: 1px solid currentColor;
+}
+
+/* Card hover effects */
+.md-typeset .admonition {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .admonition:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

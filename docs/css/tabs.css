@@ -1,0 +1,20 @@
+/* 
+ * Custom styles for making tabs bolder and larger
+ */
+
+/* Make the tab container more prominent */
+.md-tabs__link {
+  font-size: 0.9rem; /* Increase overall font size */
+  font-weight: 600; /* Make tabs semi-bold by default */
+  margin-top: unset;
+}
+
+/* Style individual tab items */
+.md-tabs__item {
+  /* Unset height */
+  height: unset;
+  padding-left: .6rem;
+  padding-right: .6rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

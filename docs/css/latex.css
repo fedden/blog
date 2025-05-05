@@ -180,6 +180,21 @@ p {
   margin-top: 1rem;
 }
 
+/* Justify text in lists to match paragraphs */
+ul, ol {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+li {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
 /* Indents paragraphs like in LaTeX documents*/
 .indent-pars p {
   text-indent: var(--text-indent-size);
@@ -514,6 +529,38 @@ article.md-post--excerpt {
   position: static; /* Reset position if not needed */
 }
 
+/* Hide sidenotes in post excerpts */
+.md-post--excerpt .sidenote,
+.md-post--excerpt .sidenote-number,
+.md-post--excerpt label.sidenote-toggle {
+  display: none !important; /* Use !important to ensure hiding regardless of other styles */
+}
+
+/* Sidenote wrapper for proper positioning */
+.sidenote-wrapper {
+  display: inline;
+  position: relative;
+}
+
+/* sidenote counter */
+.sidenote-number {
+  counter-increment: sidenote-counter;
+  color: #8B0000; /* Deep dark red */
+  position: relative;
+  display: inline;
+}
+
+/* add number in main content - THIS IS THE NUMBER IN TEXT */
+.sidenote-number::after {
+  content: '[' counter(sidenote-counter) ']';
+  font-size: 0.7rem;
+  top: -0.5rem;
+  left: 0.1rem;
+  color: #8B0000; /* Deep dark red */
+  position: relative;
+  display: inline-block;
+  font-weight: 600; /* Match the font-weight of the sidenote number */
+}
 
 .sidenote {
   /* Sidenote styles will primarily apply to non-excerpt articles due to the width */
@@ -524,6 +571,17 @@ article.md-post--excerpt {
   margin-right: -20vw;
   margin-bottom: 1em;
   text-indent: 0;
+  color: var(--md-typeset-color) !important; /* Use theme variable for color */
+}
+
+/* Force the sidenote text to use the default color */
+span.sidenote {
+  color: var(--md-typeset-color) !important;
+}
+
+/* Reset any inherited color for the sidenote text */
+.sidenote > * {
+  color: var(--md-typeset-color) !important; /* Use theme variable for color */
 }
 
 .sidenote.left {
@@ -534,40 +592,46 @@ article.md-post--excerpt {
 }
 
 /* (WIP) add border when a sidenote is clicked on */
-.sidenote:target {
+.sidenote:target, .sidenote-highlight {
   border: 1.5px solid;
   padding: 0 .5rem;
-  scroll-margin-block-start: 10rem;
+  scroll-margin-block-start: 40vh; /* Center vertically when scrolled to */
+  scroll-margin-inline-end: 5vw; /* Add some horizontal margin */
+  background-color: rgba(139, 0, 0, 0.05); /* Light red background */
+  transition: background-color 0.3s ease;
 }
 
-/* sidenote counter */
-.sidenote-number {
-  counter-increment: sidenote-counter;
+/* Special animation for highlighted sidenotes */
+@keyframes sidenote-pulse {
+  0% { background-color: rgba(139, 0, 0, 0.05); }
+  50% { background-color: rgba(139, 0, 0, 0.15); }
+  100% { background-color: rgba(139, 0, 0, 0.05); }
 }
 
-.sidenote-number::after,
-.sidenote::before {
-  position: relative;
-  vertical-align: baseline;
+.sidenote-highlight {
+  animation: sidenote-pulse 2s ease;
 }
 
-/* add number in main content */
-.sidenote-number::after {
-  content: counter(sidenote-counter);
-  font-size: 0.7rem;
-  top: -0.5rem;
-  left: 0.1rem;
+/* Style for the sidenote links */
+.sidenote-link {
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.sidenote-link:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 /* add number in front of the sidenote */
-.sidenote-number ~ .sidenote::before {
-  content: counter(sidenote-counter) ' ';
+.sidenote::before {
+  content: '[' counter(sidenote-counter) '] ';
   font-size: 0.7rem;
-  top: -0.5rem;
-}
-
-label.sidenote-toggle:not(.sidenote-number) {
-  display: none;
+  font-weight: 600;
+  margin-right: 0.2rem;
+  color: #8B0000; /* Deep dark red */
+  display: inline-block;
 }
 
 /* sidenotes inside blockquotes are indented more */
@@ -575,7 +639,6 @@ blockquote .sidenote {
   margin-right: -24vw;
   width: 18vw;
 }
-
 
 label.sidenote-toggle {
   display: inline;
@@ -713,4 +776,17 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.8rem;
+}
+
+/* Style for the clickable sidenote number in main text */
+.sidenote-number-link {
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  border-bottom: none !important;
+}
+
+.sidenote-number-link:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
