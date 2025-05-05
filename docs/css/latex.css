@@ -513,12 +513,9 @@ dl dd {
  *   This is such a hack - need to figure out how to balance side notes with article max width.
  */
 article {
-  max-width: 61ch; /* Default width for articles, e.g., full blog posts */
-  /* Center the narrow article */
-  margin-left: auto;
-  margin-right: auto;
-  /* Needed for relative positioning of sidenotes if using that method */
-  position: relative; 
+  /* Position and reserve right padding for side-notes column */
+  position: relative;
+  padding-right: calc(var(--md-sidebar-width, 15rem) + 1.5rem);
 }
 
 /* Override width for blog post excerpts on the index page */
@@ -563,12 +560,10 @@ article.md-post--excerpt {
 }
 
 .sidenote {
-  /* Sidenote styles will primarily apply to non-excerpt articles due to the width */
   font-size: 0.8rem;
   float: right;
-  clear: right;
-  width: 18vw;
-  margin-right: -20vw;
+  width: var(--md-sidebar-width, 15rem); /* Reserve width */
+  margin-left: 1rem; /* Gap between text and sidenote */
   margin-bottom: 1em;
   text-indent: 0;
   color: var(--md-typeset-color) !important; /* Use theme variable for color */
@@ -586,7 +581,10 @@ span.sidenote {
 
 .sidenote.left {
   float: left;
-  margin-left: -20vw;
+  clear: left; /* Added for consistency */
+  /* margin-left: -20vw; */ /* REMOVED: Old fixed margin */
+  width: var(--md-nav-width, 18.75rem); /* Use left nav width variable */
+  margin-left: calc(-1 * var(--md-nav-width, 18.75rem) - 1.5rem); /* Position in left margin */
   margin-bottom: 1em;
   text-indent: 0;
 }
@@ -650,24 +648,42 @@ input.sidenote-toggle {
 }
 
 @media (max-width: 1050px) {
+  /* Reset article padding on mobile */
+  article {
+    padding-right: initial;
+  }
   label.sidenote-toggle:not(.sidenote-number) {
     display: inline;
   }
   .sidenote {
     display: none;
+    /* Reset positioning for mobile */
+    float: none;
+    width: auto;
+    margin-left: 0;
   }
   .sidenote-toggle:checked + .sidenote {
     display: block;
     margin: 0.5rem 1.25rem 1rem 0.5rem;
-    float: left;
-    left: 1rem;
-    clear: both;
-    width: 95%;
+    float: none;
+    width: auto;
+    margin-left: 0.5rem;
   }
   /* tweak indentation of sidenote inside a blockquote */
   blockquote .sidenote {
-    margin-right: -25vw;
-    width: 16vw;
+    margin-right: auto;
+    width: auto;
+  }
+  blockquote .sidenote.left {
+    margin-left: auto;
+    width: auto;
+  }
+  /* Restore article padding for default sidenote toggles */
+  article,
+  article.md-content__inner.md-typeset {
+    padding-right: initial !important;
+    margin: 0 .6rem !important; /* breathing room on either side */
+    width: auto !important;
   }
 }
 
@@ -789,4 +805,144 @@ h6 {
 .sidenote-number-link:hover {
   text-decoration: none !important;
   border-bottom: none !important;
+}
+
+/* Simplified three-column layout for wide screens: TOC | Article | Side-notes */
+@media (min-width: 1050px) {
+  .md-content--post {
+    display: grid !important;
+    grid-template-columns: var(--md-sidebar-width, 15rem) 1fr var(--md-sidebar-width, 15rem);
+    gap: 1.5rem;
+  }
+
+  /* Hide the inline script child in the content container */
+  .md-content--post > script {
+    display: none !important;
+  }
+
+  /* TOC sidebar in first column */
+  .md-content--post > .md-sidebar--post {
+    grid-column: 1;
+  }
+
+  /* Main article in second column */
+  .md-content--post > article.md-content__inner.md-typeset {
+    grid-column: 2;
+    /* Remove base right padding */
+    padding-right: 0 !important;
+    margin: 0 !important;
+    /* Ensure it fills the column */
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  /* Side-notes container in third column */
+  .md-content--post > .sidenotes-container {
+    grid-column: 3;
+    overflow-y: auto;
+    margin: 0;
+  }
+
+  /* Override default article padding globally when wide */
+  article {
+    padding-right: 0 !important;
+  }
+
+  /* Enable absolute positioning of individual notes */
+  .sidenotes-container {
+    position: relative;
+  }
+  .sidenotes-container .sidenote-wrapper {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  /* Disable CSS counters for cloned side-notes; we'll inject number via JS */
+  .sidenotes-container .sidenote::before {
+    content: none !important;
+  }
+
+  .sidenotes-container .sidenote-number-clone {
+    color: #8B0000 !important; /* Deep dark red, overriding parent override */
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-right: 0.2rem;
+    display: inline-block;
+  }
+}
+
+/* neutralize Material’s inline height on the scrollable sidebar */
+.md-sidebar__scrollwrap {
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* Always ensure cloned note numbers stay red regardless of overrides */
+.sidenotes-container .sidenote > .sidenote-number-clone {
+  color: #8B0000 !important;
+}
+
+.md-nav--secondary .md-nav__list {
+  padding-left: .6rem !important;
+}
+
+/* Remove gap between items in the ToC when big header goes away */
+@media (max-width: 1220px) {
+  .md-nav__list {
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Mobile fallback: restore default behavior and hide extracted side-notes container */
+@media (max-width: 1050px) {
+  /* Show single-column layout */
+  .md-content--post {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: initial !important;
+  }
+
+  /* Show TOC normally */
+  .md-sidebar--post {
+    display: block !important;
+  }
+
+
+  /* target _only_ the secondary nav (the ToC) */
+  .md-sidebar--post .md-nav--secondary .md-nav__list {
+    display: block !important;        /* switch off flex */
+    overflow-x: visible !important;   /* restore normal wrapping */
+  }
+  .md-sidebar--post .md-nav--secondary .md-nav__item {
+    display: list-item !important;    /* restore list-item behavior */
+    flex: none !important;            /* kill any flex restraint */
+    margin-bottom: 0.5em;             /* optional spacing between items */
+  }
+
+  /* Restore article padding for default sidenote toggles */
+  article,
+  article.md-content__inner.md-typeset {
+    padding-right: initial !important;
+    margin: 0 .6rem !important; /* breathing room on either side */
+    width: auto !important;
+    max-width: unset !important;
+    float: none !important;
+  }
+
+  /* Hide sidenotes when screen is small 
+   * 
+   * TODO(fedden): Remove this once I've got a more robust sidenotes system.
+   */
+  .sidenote-wrapper,
+  .sidenote-number-link,
+  label.sidenote-toggle,
+  .sidenote {
+    display: none !important;
+  }
+  /* Hide extracted side-notes container */
+  .sidenotes-container {
+    display: none !important;
+  }
 }

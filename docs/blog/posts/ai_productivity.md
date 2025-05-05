@@ -195,7 +195,7 @@ This fractalisation not only highlights the complementarity of AI and human labo
 ## Work... Work Never Changes...
 [6]{ Yes, Fallout FTW! }
 
-Humlum and Vestergaard’s study un^derscores an important reality: the impact of generative AI on productivity and labour markets is nuanced and multifaceted. While generative AI unquestionably demonstrates potential for efficiency gains, these benefits often manifest indirectly, accompanied by new tasks, unexpected risks, and more specialised human roles.
+Humlum and Vestergaard’s study underscores an important reality: the impact of generative AI on productivity and labour markets is nuanced and multifaceted. While generative AI unquestionably demonstrates potential for efficiency gains, these benefits often manifest indirectly, accompanied by new tasks, unexpected risks, and more specialised human roles.
 
 By aligning real-world experiences with established economic paradoxes such as the Productivity Paradox and Jevons Paradox, we gain clearer insight into why immediate measurable benefits are often modest. Understanding these paradoxes helps set realistic expectations about generative AI’s potential and highlights the importance of carefully managing its integration into workplaces to maximise genuine long-term value.
 
