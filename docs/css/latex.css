@@ -951,3 +951,13 @@ h6 {
 .md-post--excerpt .admonition {
   display: none !important;
 }
+
+/* Make TOC text left-aligned instead of justified */
+.md-nav__list,
+.md-nav__item,
+.md-nav__link {
+  text-align: left !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -moz-hyphens: none !important;
+}
