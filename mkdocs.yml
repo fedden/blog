@@ -106,4 +106,4 @@ extra_css:
   - css/tabs.css
 hooks:
   - custom_hooks.py
-copyright: Copyright &copy; 2024-2025 Leon Fedden
+copyright: 'Copyright &copy; 2024-2025 Leon Fedden, and please read the <a style="color: #8B0000;" href="/disclaimer">disclaimer</a>!'

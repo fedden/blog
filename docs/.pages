@@ -1,0 +1,4 @@
+nav:
+  - About: index.md
+  - Blog: blog/
+  - Disclaimer: disclaimer.md
