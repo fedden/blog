@@ -34,7 +34,7 @@ Stepping clear of the AI risk aspect and focussing instead on the impact, it's c
 If you are like me (a programmer and not an economist), then here is a quick refresher on what some of the terms that are thrown around in this post mean:
 
 * **Productivity**: Productivity is a measure of performance that compares the output of a product with the input, or resources, required to produce the output. The input may be labour, equipment, or money. For a company, productivity can be a measure of the efficiency of a company's production process, calculated by measuring the number of units of a product produced relative to labour hours or by measuring sales relative to labour hours. 
-* **Labour Productivity**: ***Labour*** productivity is about measuring how efficiently labour (as an input) can be used to create outputs. Labour productivity can be analysed by profession to profession, to identify trends in job growth, wages, and technological advances.
+* **Labour Productivity**: Labour productivity is about measuring how efficiently labour (as an input) can be used to create outputs. Labour productivity can be analysed by profession to profession, to identify trends in job growth, wages, and technological advances.
 * **Labour Market Outcomes**: Labour market outcomes refer to the overall performance and characteristics of the labour market, including factors like salary, employment levels, etc.
 
 If you are not like me and are more an economist than a programmer, then here is a quick refresher on what some of the technical jargon thrown around in this post mean:
