@@ -1,4 +1,4 @@
-# ⚠️ Blog Disclaimer — a.k.a. "Leon Covers His Back"
+# ⚠️ Blog Disclaimer, or, Leon Covers His Back
 
 *(Last updated : **07 May 2025** - I reserve the right to tweak wording or add entire new paragraphs whenever reality changes or lawyers glare at me.)*
 
