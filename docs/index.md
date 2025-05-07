@@ -12,6 +12,6 @@ If we rewind a bit further, I went from being one of ~70,000 at AstraZeneca to o
 
 Before all that, I was at Goldsmiths, University of London, training unconditional generative neural networks and generally having a great time exploring the frontiers of AI.
 
-I’m passionate about all things Artificial Intelligence—news, research, engineering, and software development in general. I'm afraid I'm a Brit, but these days I call Spain home and enjoy wandering around the EU. If you fancy a chat about AI, tech, or just want to swap Vim tips, do say hello!
+I’m passionate about all things Artificial Intelligence - news, research, engineering, and software development in general. I'm afraid I'm a Brit, but these days I call Spain home and enjoy wandering around the EU. If you fancy a chat about AI, tech, or just want to swap Vim tips, do say hello!
 
 You can reach me at leonfedden [at] gmail [dot] com.
