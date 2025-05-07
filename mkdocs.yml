@@ -106,3 +106,4 @@ extra_css:
   - css/tabs.css
 hooks:
   - custom_hooks.py
+copyright: Copyright &copy; 2024-2025 Leon Fedden
