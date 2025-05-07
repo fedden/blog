@@ -7,6 +7,7 @@ categories:
   - Productivity
   - LLM
   - Opinion
+description: Exploring the nuances in productivity gains when using AI for work
 ---
 # Subtleties of AI Productivity Gains
 
