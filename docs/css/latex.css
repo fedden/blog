@@ -872,7 +872,7 @@ h6 {
   }
 }
 
-/* neutralize Material’s inline height on the scrollable sidebar */
+/* neutralize Material's inline height on the scrollable sidebar */
 .md-sidebar__scrollwrap {
   height: auto !important;
   max-height: none !important;
@@ -945,4 +945,9 @@ h6 {
   .sidenotes-container {
     display: none !important;
   }
+}
+
+/* Hide admonitions in blog post excerpts */
+.md-post--excerpt .admonition {
+  display: none !important;
 }
